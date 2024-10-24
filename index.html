@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>18 Hrs Fitness</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <img src="18hrs.jpg" alt="18 Hrs Fitness Logo" /> 
+        <h1>18 Hrs Fitness</h1> 
+    </div>
+    
+    <div class="nav-bar">
+        <ul class="menu">
+            <li><a href="#" onclick="showSection('dashboard')">Dashboard</a></li>
+            <li><a href="#" onclick="showSection('customer')">Customer Registration</a></li>
+            <li><a href="#" onclick="showSection('login')">Login</a></li>
+            <li><a href="#" onclick="showSection('personalTraining')">Personal Training</a></li>
+            <li><a href="#" onclick="showSection('registeredCustomers')">Registered Customers</a></li>
+            <li><a href="#" onclick="showSection('contact')">Contact Us</a></li>
+        </ul>
+    </div>
+
+    <div class="content-wrapper">
+        <div id="dashboard" class="content active">
+            <h2>Welcome to 18 Hrs Fitness</h2>
+            <p>#SAFE SWEAT SAVE</p>
+        </div>
+        
+        <div id="customer" class="content">
+            <h2>Customer Registration</h2>
+            <form id="customerForm" onsubmit="registerCustomer(event)">
+                <label for="custName">Name:</label>
+                <div class="input-icon">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="custName" name="custName" required>
+                </div>
+
+                <label for="custAge">Age:</label>
+                <div class="input-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                    <input type="number" id="custAge" name="custAge" required>
+                </div>
+
+                <label for="custPhone">Phone Number:</label>
+                <div class="input-icon">
+                    <i class="fas fa-phone"></i>
+                    <input type="text" id="custPhone" name="custPhone" required>
+                </div>
+
+                <label for="custEmail">Email:</label>
+                <div class="input-icon">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="custEmail" name="custEmail" required>
+                </div>
+
+                <button type="submit">Register Customer</button>
+            </form>
+            
+            <!-- Success Message -->
+            <p id="successMessage" style="display:none; color: green;"></p>
+        </div>
+
+        <!-- Registered Customers Section -->
+        <div id="registeredCustomers" class="content">
+            <h2>Registered Customers</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                <tbody id="customerTableBody">
+                    <!-- Customer data will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+
+        <div id="login" class="content">
+            <h2>Login</h2>
+            <form id="loginForm" action="/login" method="post">
+                <label for="loginEmail">Email:</label>
+                <div class="input-icon">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" id="loginEmail" name="loginEmail" required>
+                </div>
+
+                <label for="loginPassword">Password:</label>
+                <div class="input-icon">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" id="loginPassword" name="loginPassword" required>
+                </div>
+
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <div id="personalTraining" class="content">
+            <h2>Personal Training</h2>
+            <p>Experience the Best Personal Training in Mumbai at 18 Hrs Fitness Gym</p>
+        </div>
+
+        <div id="contact" class="content">
+            <h2>Contact Us</h2>
+            <ul>
+                <li><i class="fas fa-phone"></i> Phone: +123-456-7890</li>
+                <li><i class="fas fa-envelope"></i> Email: contact@18hrsfitness.com</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Follow us on social media for updates and promotions:</p>
+        <p>
+            <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a> |
+            <a href="#"><i class="fab fa-instagram"></i> Instagram</a> |
+            <a href="#"><i class="fab fa-twitter"></i> Twitter</a>
+        </p>
+        <p>&copy; 2024 18 Hrs Fitness. All rights reserved.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
